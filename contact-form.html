@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Agathe Khalsa</title>
+<style>
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    padding: 40px 20px;
+    background: #f8f4ec;
+    color: #24384a;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+:root {
+    --or: #b98a32;
+    --or-fonce: #987027;
+    --bleu: #1d3549;
+    --creme: #f8f4ec;
+    --creme-fonce: #eee5d5;
+}
+.kv-page {
+    max-width: 560px;
+    margin: 0 auto;
+}
+.kv-back {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: var(--bleu);
+    font-size: 13px;
+    text-decoration: none;
+}
+.kv-back:hover { color: var(--or-fonce); }
+.kv-form-box {
+    background: #fff;
+    border-radius: 9px;
+    padding: 25px;
+    box-shadow: 0 2px 8px rgba(45, 37, 26, .08);
+}
+.kv-form-box h1 {
+    margin: 0 0 20px;
+    color: var(--bleu);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.kv-form-row { margin-bottom: 14px; }
+.kv-form-row-split {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+.kv-form-row-split .kv-form-row {
+    flex: 1;
+    margin-bottom: 0;
+}
+.kv-form-row label {
+    display: block;
+    margin-bottom: 5px;
+    color: #3f4d58;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+}
+.kv-form-row input,
+.kv-form-row select,
+.kv-form-row textarea {
+    width: 100%;
+    padding: 11px 13px;
+    border: 1px solid #d8cdb8;
+    border-radius: 6px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color: #24384a;
+    background: #fdfcf9;
+}
+.kv-form-row textarea { resize: vertical; min-height: 90px; }
+.kv-form-row input:focus,
+.kv-form-row select:focus,
+.kv-form-row textarea:focus {
+    outline: none;
+    border-color: var(--or);
+}
+.kv-form-submit {
+    width: 100%;
+    border: 0;
+    cursor: pointer;
+    background: var(--or);
+    color: #fff;
+    padding: 13px 20px;
+    border-radius: 25px;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    transition: background .25s ease;
+}
+.kv-form-submit:hover { background: var(--or-fonce); }
+.kv-form-note {
+    margin: 10px 0 0;
+    color: #8a7f6c;
+    font-size: 10px;
+    text-align: center;
+}
+.kv-popup-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(30, 40, 50, .45);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.kv-popup-overlay.kv-open { display: flex; }
+.kv-popup {
+    background: #fff;
+    border-radius: 14px;
+    padding: 32px 28px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 12px 40px rgba(0,0,0,.18);
+}
+.kv-popup-icon { font-size: 36px; color: var(--or); margin-bottom: 12px; }
+.kv-popup-title {
+    margin: 0 0 10px;
+    color: var(--bleu);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+}
+.kv-popup-text { margin: 0 0 22px; color: #4f5960; font-size: 14px; line-height: 1.5; }
+.kv-popup-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 28px;
+    background: var(--or);
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.kv-popup-btn:hover { background: var(--or-fonce); }
+</style>
+</head>
+<body>
+
+<div class="kv-page">
+    <a class="kv-back" href="https://khalsa-vision.neocities.org/#contact">&larr; Retour au site Agathe Khalsa</a>
+
+    <div class="kv-form-box">
+        <h1>Commande de livre ou demande</h1>
+
+        <form id="kv-contact-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="f42acadc-ed9a-4a80-8dfb-c73e58b3ca5f">
+            <input type="hidden" name="subject" value="Nouvelle demande - Agathe Khalsa">
+            <input type="hidden" name="from_name" value="Site Agathe Khalsa">
+            <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+            <div class="kv-form-row">
+                <label for="kv-demande">Vous souhaitez</label>
+                <select id="kv-demande" name="Demande" required>
+                    <option value="">— Choisir —</option>
+                    <option value="Commande du livre">Commander le livre</option>
+                    <option value="RDV Coaching holistique">RDV — Coaching holistique</option>
+                    <option value="RDV Soins énergétiques">RDV — Soins énergétiques</option>
+                    <option value="RDV Guidance">RDV — Guidance</option>
+                    <option value="RDV Yoga et méditation">RDV — Yoga &amp; méditation</option>
+                    <option value="Autre">Autre demande</option>
+                </select>
+            </div>
+
+            <div class="kv-form-row-split">
+                <div class="kv-form-row">
+                    <label for="kv-nom">Nom</label>
+                    <input type="text" id="kv-nom" name="Nom" required>
+                </div>
+                <div class="kv-form-row">
+                    <label for="kv-prenom">Prénom</label>
+                    <input type="text" id="kv-prenom" name="Prénom" required>
+                </div>
+            </div>
+
+            <div class="kv-form-row">
+                <label for="kv-email">Email</label>
+                <input type="email" id="kv-email" name="email" required>
+            </div>
+
+            <div class="kv-form-row">
+                <label for="kv-tel">Téléphone</label>
+                <input type="tel" id="kv-tel" name="Téléphone">
+            </div>
+
+            <div class="kv-form-row">
+                <label for="kv-rue">Rue (pour l'envoi du livre)</label>
+                <input type="text" id="kv-rue" name="Rue">
+            </div>
+
+            <div class="kv-form-row">
+                <label for="kv-ville">Ville</label>
+                <input type="text" id="kv-ville" name="Ville">
+            </div>
+
+            <div class="kv-form-row">
+                <label for="kv-cp">Code postal</label>
+                <input type="text" id="kv-cp" name="Code postal">
+            </div>
+
+            <div class="kv-form-row">
+                <label for="kv-message">Message</label>
+                <textarea id="kv-message" name="Message" placeholder="Précisez votre demande, vos disponibilités..."></textarea>
+            </div>
+
+            <button type="submit" class="kv-form-submit" id="kv-form-btn">Envoyer ma demande</button>
+        </form>
+        <p class="kv-form-note">Votre demande est envoyée par email. Vous recevrez aussi un email de confirmation.</p>
+    </div>
+</div>
+
+<div class="kv-popup-overlay" id="kv-popup" role="dialog" aria-modal="true" aria-labelledby="kv-popup-title">
+    <div class="kv-popup">
+        <div class="kv-popup-icon">✓</div>
+        <h3 class="kv-popup-title" id="kv-popup-title">Demande envoyée</h3>
+        <p class="kv-popup-text">Votre message a bien été transmis à Agathe Khalsa.<br>Vous allez aussi recevoir un email de confirmation.</p>
+        <button type="button" class="kv-popup-btn" id="kv-popup-close">Retour au site</button>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var form = document.getElementById('kv-contact-form');
+    var popup = document.getElementById('kv-popup');
+    var popupClose = document.getElementById('kv-popup-close');
+    var btn = document.getElementById('kv-form-btn');
+
+    if (form) {
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            var nomEl = document.getElementById('kv-nom');
+            var prenomEl = document.getElementById('kv-prenom');
+            var full = ((prenomEl ? prenomEl.value.trim() : '') + ' ' + (nomEl ? nomEl.value.trim() : '')).trim() || 'Visiteur';
+            var existing = form.querySelector('input[name="name"]');
+            if (existing) {
+                existing.value = full;
+            } else {
+                var h = document.createElement('input');
+                h.type = 'hidden';
+                h.name = 'name';
+                h.value = full;
+                form.appendChild(h);
+            }
+
+            if (btn) { btn.textContent = 'Envoi en cours...'; btn.disabled = true; }
+
+            var data = new FormData(form);
+            fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+                .then(function (res) { return res.json(); })
+                .then(function () {
+                    form.reset();
+                    if (popup) popup.classList.add('kv-open');
+                })
+                .catch(function () {
+                    alert("Une erreur est survenue. Merci de réessayer, ou d'écrire directement à agathedelattre.paris@gmail.com");
+                })
+                .finally(function () {
+                    if (btn) { btn.textContent = 'Envoyer ma demande'; btn.disabled = false; }
+                });
+        });
+    }
+
+    function closePopup() {
+        if (popup) popup.classList.remove('kv-open');
+        window.location.href = 'https://khalsa-vision.neocities.org/#contact';
+    }
+    if (popupClose) popupClose.addEventListener('click', closePopup);
+    if (popup) {
+        popup.addEventListener('click', function (e) {
+            if (e.target === popup) closePopup();
+        });
+    }
+});
+</script>
+
+</body>
+</html>
